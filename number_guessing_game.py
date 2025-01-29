@@ -3,7 +3,6 @@ import random
 number = random.randint(1,100)
 
 while True:
-    print('number is ',number)
     user_number = input("Guess Number Between 1 And 100 : ")
     
     if user_number.isdigit():
