@@ -43,17 +43,19 @@ def check_win_loose(user,comp):
                 print("You Win!")
         
 while True:
-    user_choice = input("Rock, Paper , or sissor ? (r/p/s) : ")
+    user_choice = input("Rock, Paper , or sissor ? (r/p/s) : ").lower()
     
     if user_choice in item:
         computer = random.choice(item)
         
         check_win_loose(user_choice,computer)
         
-        keep_play = input("Continue ? (y/n) : ")
+        keep_play = input("Continue ? (y/n) : ").lower()
         if keep_play in is_continue:
             if keep_play == "y":
                 continue
+            else:
+                break
         else:
             ("Invalid")
             
