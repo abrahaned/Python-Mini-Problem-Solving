@@ -1,9 +1,3 @@
-# input user r,p,s
-#if not contains rps invalid and try again
-#if r,p,s
-#get input and random for computer
-#if user is r and computer is
-# r > s > p > s
 import random
 item = ["r","p","s"]
 is_continue = ["y","n"]
@@ -41,7 +35,17 @@ def check_win_loose(user,comp):
                 print(f"You Choose {user_choice}")
                 print(f"Computer Choose {computer}")
                 print("You Win!")
-        
+
+def is_quit():
+    keep_play = input("Continue ? (y/n) : ").lower()
+    if keep_play in is_continue:
+        if keep_play == "y":
+            return False
+        else:
+            return True
+    else:
+        ("Invalid")  
+              
 while True:
     user_choice = input("Rock, Paper , or sissor ? (r/p/s) : ").lower()
     
@@ -49,15 +53,8 @@ while True:
         computer = random.choice(item)
         
         check_win_loose(user_choice,computer)
-        
-        keep_play = input("Continue ? (y/n) : ").lower()
-        if keep_play in is_continue:
-            if keep_play == "y":
-                continue
-            else:
-                break
-        else:
-            ("Invalid")
+        if is_quit():
+            break
             
     else:
         print("Invalid")
